@@ -1,6 +1,4 @@
-import com.chibamu.forex.service.GreetingService;
-import com.chibamu.forex.service.StockService;
-import com.chibamu.forex.service.StockServiceImpl;
+import com.chibamu.forex.service.TransactionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -16,11 +14,7 @@ public class Application
         String[] applicationCtx =  new String[] {"application-context.xml"};
         ApplicationContext ctx = new ClassPathXmlApplicationContext(applicationCtx);
 
-        GreetingService greetingService = (GreetingService) ctx.getBean("Greeter");
-        greetingService.greet("Dushbag heater shit...");
-
-        StockService stockService = (StockService)ctx.getBean("ngodza");
-        String stock = stockService.findLatestStock().stream().findFirst().orElse("");
-        Log.debug(stock);
+        TransactionService transactionService = (TransactionService) ctx.getBean("transactionService");
+        Log.debug(transactionService.getTransactionDetails().toString());
     }
 }
