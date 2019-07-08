@@ -6,4 +6,8 @@ public class TransactionServiceImpl implements TransactionService {
     public Transaction getTransactionDetails() {
         return new Transaction(1L, TransactionType.ABNORMAL);
     }
+
+    public static TransactionService newInstance(){
+        return new TransactionServiceImpl();
+    }
 }
