@@ -12,4 +12,6 @@
     -->
 
     <context:component-scan base-package="com.chibamu.forex"/>
+
+    <bean id="stockService" class="com.chibamu.forex.service.StockServiceImpl"/>
 </beans>
